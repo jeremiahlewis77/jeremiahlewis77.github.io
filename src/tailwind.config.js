@@ -10,6 +10,11 @@ module.exports = {
             neutral: '#FFFCF9',
             sapphire: '#1F55AD',
             gunmetal: '#1F2937',
+            snow: '#FCFCFC',
+        },
+        fontFamily: {
+            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+            'body': ['Work Sans', 'system-ui', 'sans-serif'],
         }
     }
   },
