@@ -17,7 +17,7 @@ const Home: NextPage = () => {
               <div className="flex flex-auto bg-snow items-center justify-center">
                   <div className="flex flex-wrap-reverse text-gunmetal items-center justify-center p-14 gap-x-10">
                       <div className="lg:text-left text-center">
-                          <h3 className="font-semibold text-3xl mb-0">Hey, I'm</h3>
+                          <h3 className="font-semibold text-3xl mb-0">Hey, I&apos;m</h3>
                           <h1 className="font-extrabold md:text-7xl text-6xl tracking-tight"><span className="text-sapphire">Jeremiah</span> <span className="font-bold">Lewis</span></h1>
                           <h3 className="font-body text-2xl">CS Graduate. Software Engineer. Graphic Designer.</h3>
 
