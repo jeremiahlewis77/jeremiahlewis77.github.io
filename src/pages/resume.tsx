@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import PageLayout from "../components/Layout/PageLayout";
+import {ResumeLink} from "../components/pdf-viewer"
 const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 
 function Header(): JSX.Element {
@@ -12,7 +13,7 @@ function Header(): JSX.Element {
             <>
             <div className="flex flex-col items-end p-2">
                 <p className="font-semibold">Most Recent Version</p>
-                <a className="btn-sapphire">
+                <a href={ResumeLink} target="_blank" className="btn-sapphire">
                     <FontAwesomeIcon icon={faFileDownload} className="mr-2"/>
                     <span>Download</span>
                 </a>
@@ -40,7 +41,7 @@ Resume.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title="Resume">
-                <PageLayout PageTitle="Resume" HeaderContent={Header()}>
+                <PageLayout PageTitle="Resume" HeaderContent={Header()} className="drop-shadow-xl mb-6">
                     {page}
                 </PageLayout>
             </Layout>
