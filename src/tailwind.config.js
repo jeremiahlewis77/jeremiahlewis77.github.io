@@ -7,8 +7,15 @@ module.exports = {
   theme: {
     extend: {
         colors: {
-            neutral: '#FFFCF9',
-            sapphire: '#1F55AD',
+            sapphire: {
+                lightest: '#6288c6',
+                lighter: '#4c77bd',
+                light: '#3566b5',
+                DEFAULT: '#1F55AD',
+                dark: '#1c4d9c',
+                darker: '#19448a',
+                darkest: '#133368'
+            },
             gunmetal: '#1F2937',
             snow: '#FCFCFC',
         },

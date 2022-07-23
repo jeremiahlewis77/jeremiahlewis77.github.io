@@ -27,6 +27,12 @@ body {
     background-position: 0 100%
 }
 
+.link-underline.current {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    font-weight: bold;
+}
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,6 +46,12 @@ body {
 
     h2 {
         @apply text-4xl font-semibold mb-2;
+    }
+}
+
+@layer components {
+    .btn-sapphire {
+        @apply bg-sapphire hover:bg-sapphire-darker text-white font-semibold py-2 px-4 rounded;
     }
 }
 
