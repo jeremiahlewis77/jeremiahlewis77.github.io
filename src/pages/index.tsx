@@ -31,7 +31,7 @@ const Page: NextPageWithLayout = () => {
                     </div>
 
                     <div className="md:w-60 w-48 mb-5 lg:mb-0">
-                        <Image src={light_avatar}/>
+                        <Image src={light_avatar} alt="Avatar with dark brown hair, glasses, and a blue sweater"/>
                     </div>
                 </div>
         </>

@@ -13,7 +13,7 @@ function Header(): JSX.Element {
             <>
             <div className="flex flex-col items-end p-2">
                 <p className="font-semibold">Most Recent Version</p>
-                <a href={ResumeLink} target="_blank" className="btn-sapphire">
+                <a href={ResumeLink} target="_blank" rel='noreferrer' className="btn-sapphire">
                     <FontAwesomeIcon icon={faFileDownload} className="mr-2"/>
                     <span>Download</span>
                 </a>
