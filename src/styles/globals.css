@@ -51,7 +51,11 @@ body {
 
 @layer components {
     .btn-sapphire {
-        @apply bg-sapphire hover:bg-sapphire-darker text-white font-semibold py-2 px-4 rounded;
+        @apply bg-sapphire hover:bg-sapphire-darker text-white font-semibold py-2 px-4 rounded md:text-base text-sm;
+    }
+
+    .page-header {
+        @apply text-sapphire font-bold md:text-left text-center md:text-6xl text-5xl;
     }
 }
 

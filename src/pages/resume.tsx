@@ -11,8 +11,7 @@ const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 function Header(): JSX.Element {
         return (
             <>
-            <div className="flex flex-col items-end p-2">
-                <p className="font-semibold">Most Recent Version</p>
+            <div className="flex flex-col items-end">
                 <a href={ResumeLink} target="_blank" rel='noreferrer' className="btn-sapphire">
                     <FontAwesomeIcon icon={faFileDownload} className="mr-2"/>
                     <span>Download</span>
@@ -41,7 +40,7 @@ Resume.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title="Resume">
-                <PageLayout PageTitle="Resume" HeaderContent={Header()} className="drop-shadow-xl mb-6">
+                <PageLayout PageTitle="Resume" HeaderContent={Header()} className="shadow-xl border-4 mb-6 flex justify-center bg-white w-max">
                     {page}
                 </PageLayout>
             </Layout>

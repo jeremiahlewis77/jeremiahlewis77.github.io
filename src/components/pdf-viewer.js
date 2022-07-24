@@ -12,10 +12,22 @@ export default function PDFViewer({ size }) {
         setNumPages(nextNumPages);
     }
 
+    function getScale(width) {
+        if (width > 1024) {
+            return 1.6
+        } else if (width > 786) {
+            return 1.4
+        } else if (width > 640) {
+            return 1.1
+        } else {
+            return 0.7
+        }
+    }
+
     return (
         <div>
             <Document file={ResumeLink} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={1} scale={size > 786 ? 1.7 : 0.6}/>
+                <Page pageNumber={1} scale={getScale(size)}/>
             </Document>
         </div>
     );
