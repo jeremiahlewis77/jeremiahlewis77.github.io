@@ -20,7 +20,7 @@ export default function PDFViewer({ size }) {
         } else if (width > 640) {
             return 1.1
         } else {
-            return 0.7
+            return 0.6
         }
     }
 
