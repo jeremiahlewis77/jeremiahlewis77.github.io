@@ -17,7 +17,7 @@ module.exports = {
                 darkest: '#133368'
             },
             gunmetal: '#1F2937',
-            snow: '#FCFCFC',
+            snow: '#FAFAFA',
         },
         fontFamily: {
             'sans': ['Montserrat', 'system-ui', 'sans-serif'],
