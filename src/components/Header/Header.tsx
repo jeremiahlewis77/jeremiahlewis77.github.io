@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logoWhite from '../../public/logo-white.svg'
+// import logoWhite from '../../public/logo-white.svg'
 import logo from '../../public/logo.svg'
 import { useRouter } from 'next/router';
 
@@ -22,7 +22,11 @@ function Header() {
                         </Link>
                     </h3>
                     <h3 className={"link-underline link-underline-black " + (router.pathname == "/services" ? "current" : "")}>Services</h3>
-                    <h3 className="bg-gunmetal text-white p-1 px-3 rounded-full hover:bg-sapphire transition ease-in-out">Contact</h3>
+                    <h3 className="bg-gunmetal text-white p-1 px-3 rounded-full hover:bg-sapphire transition ease-in-out">
+                        <Link href="/contact" passHref={true}>
+                            <a>Contact</a>
+                        </Link>
+                    </h3>
                 </div>
             </div>
         </header>
