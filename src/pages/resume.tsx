@@ -40,7 +40,7 @@ Resume.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title="Resume">
-                <PageLayout PageTitle="Resume" HeaderContent={Header()} className="shadow-xl border-4 mb-6 flex justify-center bg-white w-max">
+                <PageLayout pageTitle="Resume" headerContent={Header()} pageCSS="shadow-xl border-4 mb-6 flex justify-center bg-white w-max">
                     {page}
                 </PageLayout>
             </Layout>

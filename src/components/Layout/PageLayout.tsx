@@ -1,18 +1,19 @@
 import React, {ReactNode} from "react";
 import PageHeader from "./components/PageHeader";
 
-type PageProps = {
-    PageTitle: string,
-    HeaderContent?: JSX.Element,
+interface PageProps  {
+    pageTitle: string,
+    headerContent?: JSX.Element,
+    pageCSS?: string,
+    headerCSS?: string,
     children: ReactNode,
-    className?: string,
 }
 
-export default function PageLayout({ PageTitle, HeaderContent, children, className }: PageProps) {
+export default function PageLayout({ pageTitle, headerContent, pageCSS, headerCSS, children}: PageProps) {
     return (
         <>
-            <PageHeader title={PageTitle}>{HeaderContent}</PageHeader>
-            <div className={"max-w-5xl min-h-max mx-auto " + (className? className : "")}>
+            <PageHeader title={pageTitle} className={headerCSS}>{headerContent}</PageHeader>
+            <div className={"max-w-5xl min-h-max mx-auto " + (pageCSS ? pageCSS : "")}>
                 {children}
             </div>
         </>

@@ -55,7 +55,11 @@ body {
     }
 
     .page-header {
-        @apply text-sapphire font-bold md:text-left text-center md:text-6xl text-5xl;
+        @apply text-sapphire font-bold md:text-6xl text-5xl;
+    }
+
+    .link {
+        @apply text-sapphire font-semibold hover:text-sapphire-darkest
     }
 }
 
