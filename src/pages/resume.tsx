@@ -21,7 +21,7 @@ function Header(): JSX.Element {
         );
 }
 
-const Resume: NextPageWithLayout = () => {
+const Resume: NextPageWithLayout<any> = () => {
     const [width, setWidth] = useState(1200);
 
     useEffect(() => {
@@ -40,7 +40,7 @@ Resume.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title="Resume">
-                <PageLayout pageTitle="Resume" headerContent={Header()} pageCSS="shadow-xl border-4 mb-6 flex justify-center bg-white w-max">
+                <PageLayout pageTitle="Resume" headerContent={Header()} pageCSS="max-w-5xl shadow-xl border-4 mb-6 flex justify-center bg-white w-max">
                     {page}
                 </PageLayout>
             </Layout>

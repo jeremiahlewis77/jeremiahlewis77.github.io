@@ -17,7 +17,7 @@ function Header(): JSX.Element {
     )
 }
 
-const Contact: NextPageWithLayout = () => {
+const Contact: NextPageWithLayout<any> = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -128,7 +128,7 @@ Contact.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title={title}>
-                <PageLayout pageTitle={header} headerContent={Header()} headerCSS="flex flex-col justify-center text-center" pageCSS="flex justify-center items-center">
+                <PageLayout pageTitle={header} headerContent={Header()} headerCSS="flex flex-col justify-center text-center" pageCSS="max-w-5xl flex justify-center items-center">
                     {page}
                 </PageLayout>
             </Layout>
