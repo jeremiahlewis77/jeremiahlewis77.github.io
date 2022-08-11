@@ -5,7 +5,7 @@ import light_avatar from '../public/light_avatar.png'
 import {NextPageWithLayout} from "./_app";
 import Layout from "../components/Layout/Layout";
 
-const Page: NextPageWithLayout = () => {
+const Page: NextPageWithLayout<any> = () => {
     return (
         <>
                 <div className="flex flex-wrap-reverse text-gunmetal items-center justify-center p-14 gap-x-10">
