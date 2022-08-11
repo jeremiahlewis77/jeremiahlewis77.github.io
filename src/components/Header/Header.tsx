@@ -15,13 +15,16 @@ function Header() {
                 </div>
                 <div className="hidden md:inline-flex sm:space-x-6 space-x-4 items-center text-gunmetal font-medium">
                     <h3 className={"link-underline link-underline-black " + (router.pathname == "/about" ? "current" : "")}>About</h3>
-                    <h3 className={"link-underline link-underline-black " + (router.pathname == "/projects" ? "current" : "")}>Projects</h3>
+                    <h3 className={"link-underline link-underline-black " + (router.pathname == "/projects" ? "current" : "")}>
+                        <Link href="/projects" passHref={true}>
+                            <a>Projects</a>
+                        </Link>
+                    </h3>
                     <h3 className={"link-underline link-underline-black " + (router.pathname == "/resume" ? "current" : "")}>
                         <Link href="/resume" passHref={true}>
                             <a>Resume</a>
                         </Link>
                     </h3>
-                    <h3 className={"link-underline link-underline-black " + (router.pathname == "/services" ? "current" : "")}>Services</h3>
                     <h3 className="bg-gunmetal text-white p-1 px-3 rounded-full hover:bg-sapphire transition ease-in-out">
                         <Link href="/contact" passHref={true}>
                             <a>Contact</a>
