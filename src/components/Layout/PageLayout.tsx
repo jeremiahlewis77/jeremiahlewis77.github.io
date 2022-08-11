@@ -13,7 +13,7 @@ export default function PageLayout({ pageTitle, headerContent, pageCSS, headerCS
     return (
         <>
             <PageHeader title={pageTitle} className={headerCSS}>{headerContent}</PageHeader>
-            <div className={"max-w-5xl min-h-max mx-auto " + (pageCSS ? pageCSS : "")}>
+            <div className={"min-h-max mx-auto " + (pageCSS ? pageCSS : "")}>
                 {children}
             </div>
         </>
