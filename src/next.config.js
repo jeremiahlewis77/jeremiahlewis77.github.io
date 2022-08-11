@@ -6,7 +6,9 @@ module.exports = {
       test: /\.pdf$/i,
       type: 'asset/source'
     })
-
     return config
+  },
+  images: {
+    domains: ['media.graphassets.com']
   },
 };
