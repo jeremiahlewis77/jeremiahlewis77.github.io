@@ -14,7 +14,11 @@ function Header() {
                     <Link href="/"><Image src={logo} alt="Jeremiah L." layout="responsive"/></Link>
                 </div>
                 <div className="hidden md:inline-flex sm:space-x-6 space-x-4 items-center text-gunmetal font-medium">
-                    <h3 className={"link-underline link-underline-black " + (router.pathname == "/about" ? "current" : "")}>About</h3>
+                    <h3 className={"link-underline link-underline-black " + (router.pathname == "/about" ? "current" : "")}>
+                        <Link href="/about" passHref={true}>
+                            <a>About</a>
+                        </Link>
+                    </h3>
                     <h3 className={"link-underline link-underline-black " + (router.pathname == "/projects" ? "current" : "")}>
                         <Link href="/projects" passHref={true}>
                             <a>Projects</a>
