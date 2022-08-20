@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import TechIcon from "../ui/Technologies/TechIcon";
 
 interface Project {
     id: string
@@ -53,8 +54,8 @@ function Project({ id, slug, title, description, githubURL, liveDemo, coverImage
                 </div>
                 <p className="tracking-tight mb-2">{description}</p>
                 <div className={`text-3xl flex items-center space-x-4 ${(markdown == null) ? "mb-2" : "mb-4"}`}>
-                    {technologies.map((tech: any, index: any) => (
-                        <i key={index} title={tech} className={`devicon-${tech}-plain text-gray-400 hover:text-gray-600 transition ease-in-out`}/>
+                    {technologies.map((tech: string, index: any) => (
+                        <TechIcon key={index} technology={tech}/>
                     ))}
                 </div>
                 {(markdown != null) ?
