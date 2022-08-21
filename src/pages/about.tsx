@@ -69,6 +69,9 @@ const About: NextPageWithLayout<any> = () => {
                         <p>Since then, I went to the University of Houston to major in Computer Science in which I have gained a lot of knowledge regarding programming, including Software Engineering, Data Structures & Algorithms, and languages such as C++ and Python. During my time at UH, I worked in several university positions in which I always introduced my technical skills to make some of my processes either more efficient or automated.</p><br/>
                         <p className="font-semibold">I am seeking a full-time Software Engineering role where I can further my skills and help a company continue their mission and achieve their goals.</p>
                     </div>
+                    <div className={"mt-4 py-2 px-6 bg-sapphire-lighter text-white text-md rounded-lg w-fit"}>
+                        📄 <Link href="/resume" passHref={true}><a className={"underline"}> View my resume</a></Link> to read more about my work experience
+                    </div>
                 </div>
                 <div id="technologies">
                     <span>
