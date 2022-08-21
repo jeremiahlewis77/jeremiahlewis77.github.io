@@ -1,33 +1,46 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { ReactElement } from 'react'
 import Image from 'next/image'
-import lightLogo from '../public/logo-light.svg'
+import light_avatar from '../public/light_avatar.png'
+import {NextPageWithLayout} from "./_app";
+import Layout from "../components/Layout/Layout";
+import {Badge} from "../components/ui/Badges/Badges";
 
-const Home: NextPage = () => {
+const Page: NextPageWithLayout<any> = () => {
+    return (
+        <>
+                <div className="flex flex-wrap-reverse text-gunmetal items-center justify-center p-14 gap-x-10">
+                    <div className="lg:text-left text-center">
+                        <h3 className="font-semibold text-3xl mb-0">Hey, I&apos;m</h3>
+                        <h1 className="font-extrabold md:text-7xl text-6xl tracking-tight"><span className="text-sapphire">Jeremiah</span> <span className="font-bold">Lewis</span></h1>
+                        <h3 className="font-body text-2xl">CS Graduate. Software Engineer. Graphic Designer.</h3>
+
+                        <div className="mt-5">
+                            <h3 className="sm:text-xl text-lg font-medium mb-1">Choose a section to learn more:</h3>
+                            <div className="flex lg:justify-start justify-center items-center gap-2 md:gap-6">
+                                <Badge isClickable href={"/about"}>👨‍💻 Read About Me</Badge>
+                                <Badge isClickable href={"/projects"}>🛠️ View My Projects</Badge>
+                                <Badge isClickable href={"/contact"}>👋 Contact Me</Badge>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="md:w-60 w-48 mb-5 lg:mb-0">
+                        <Image src={light_avatar} alt="Avatar with dark brown hair, glasses, and a blue sweater"/>
+                    </div>
+                </div>
+        </>
+    )
+}
+
+
+Page.getLayout = function getLayout(page: ReactElement) {
   return (
-      <><div className="relative flex flex-col min-h-screen bg-sapphire justify-center p-6">
-        <Head>
-            <title>Coming Soon!</title>
-            <meta name="description" content="Portfolio website for Jeremiah Lewis"/>
-            <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com"/>
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-        </Head>
-        <div className="relative bg-neutral p-8 shadow-xl ring-1 ring-sapphire sm:mx-auto sm:max-w-lg sm:rounded-lg">
-            <div className="mx-auto max-w-md">
-                <div className="w-[250px] my-2"><Image src={lightLogo} alt="Jeremiah L."/></div>
-                <div className="text-gray-700 py-3">
-                    <h2>In progress</h2>
-                </div>
-                <div>
-                    <p>Thank you for checking in! The site is currently in progress and should be up soon. If you have any questions,
-                        you can email me at <a href="mailto:jeremiahlewis55@gmail.com">jeremiahlewis55@gmail.com</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div></>
+      <>
+          <Layout css="flex justify-center items-center">
+              {page}
+          </Layout>
+      </>
   )
 }
 
-export default Home
+export default Page
