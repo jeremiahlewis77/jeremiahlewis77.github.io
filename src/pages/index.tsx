@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import light_avatar from '../public/light_avatar.png'
 import {NextPageWithLayout} from "./_app";
 import Layout from "../components/Layout/Layout";
+import {Badge} from "../components/ui/Badges/Badges";
 
 const Page: NextPageWithLayout<any> = () => {
     return (
@@ -17,15 +17,9 @@ const Page: NextPageWithLayout<any> = () => {
                         <div className="mt-5">
                             <h3 className="sm:text-xl text-lg font-medium mb-1">Choose a section to learn more:</h3>
                             <div className="flex lg:justify-start justify-center items-center gap-2 md:gap-6">
-                                <div className="bg-slate-300 rounded border-solid border-gunmetal p-2 py-1 text-center hover:bg-sapphire hover:text-snow transition ease-in-out cursor-pointer">
-                                    <h3 className="sm:text-lg text-md font-medium">Professional</h3>
-                                </div>
-                                <div className="bg-slate-300 rounded border-solid border-gunmetal p-2 py-1 text-center hover:bg-sapphire hover:text-snow transition ease-in-out cursor-pointer">
-                                    <h3 className="sm:text-lg text-md font-medium">Personal</h3>
-                                </div>
-                                <div className="bg-slate-300 rounded border-solid border-gunmetal p-2 py-1 text-center hover:bg-sapphire hover:text-snow transition ease-in-out cursor-pointer">
-                                    <h3 className="sm:text-lg text-md font-medium">Musician</h3>
-                                </div>
+                                <Badge isClickable href={"/about"}>👨‍💻 Read About Me</Badge>
+                                <Badge isClickable href={"/projects"}>🛠️ View My Projects</Badge>
+                                <Badge isClickable href={"/contact"}>👋 Contact Me</Badge>
                             </div>
                         </div>
                     </div>
