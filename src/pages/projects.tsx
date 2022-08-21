@@ -50,7 +50,7 @@ const Projects: NextPageWithLayout<any> = ({ projects }) => {
 
     return (
         <>
-            <div className="flex md:space-x-4 space-x-0 flex-wrap justify-center">
+            <div className="flex sm:space-x-4 space-x-0 flex-wrap justify-center">
                 {/*
                     // @ts-ignore */}
                 {projects.map(({id, title, slug, githubUrl, liveDemo, coverImage, description, technologies, markdown}) => (
