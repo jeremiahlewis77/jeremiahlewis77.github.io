@@ -26,7 +26,7 @@ Commit Activity:
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/jeremiahlewis77/personal-website/main?label=main&style=flat-square)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/jeremiahlewis77/personal-website/develop?label=develop&style=flat-square)
 
-**Development is still ongoing.** Commits are primarily being made on the [develop branch](https://github.com/jeremiahlewis77/personal-website/tree/develop). Watch the [Beta launch](https://github.com/jeremiahlewis77/personal-website/milestone/1) milestone and [issues](https://github.com/jeremiahlewis77/personal-website/issues) to view progress. 
+**Website has launched!** However, new features are still being implemented. Commits are primarily being made on the [develop branch](https://github.com/jeremiahlewis77/personal-website/tree/develop). View [issues](https://github.com/jeremiahlewis77/personal-website/issues) to view ongoing progress. 
 
 ## :bug: Issues
 Notice anything wrong? Feel free to **submit a new issue** and I will review it.

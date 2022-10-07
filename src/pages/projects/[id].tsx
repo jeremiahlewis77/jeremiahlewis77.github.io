@@ -1,32 +1,25 @@
 import {NextPageWithLayout} from "../_app";
 import React, {ReactElement} from "react";
 import Layout from "../../components/Layout/Layout";
-import { GraphQLClient, gql } from "graphql-request"
 import { ParsedUrlQuery } from 'querystring'
 import {GetStaticProps} from "next";
 import {serialize} from "next-mdx-remote/serialize";
 import {MDXRemote} from "next-mdx-remote";
 import Link from "next/link";
+import {getProjects} from "../../graphql/queries/getProjects";
+import {getProjectByID} from "../../graphql/queries/getProjectByID";
 
 type Props = {
     project: any
 }
 
 interface IParams extends ParsedUrlQuery {
-    slug: string
+    slug: string | string[]
 }
 
-const graphcms = new GraphQLClient('https://api-us-east-1.hygraph.com/v2/cl4m60ewc7fun01z6437najgy/master');
 export async function getStaticPaths() {
-    const query = gql`
-    {
-        projects {
-            slug
-        }
-    }
-    `
-    const res = await graphcms.request(query);
-    const paths = res["projects"].map((project: any) => ({
+    const { projectsWithMarkdown } = await getProjects()
+    const paths = projectsWithMarkdown.map((project: any) => ({
        params: { id: project.slug },
     }))
 
@@ -36,39 +29,20 @@ export async function getStaticPaths() {
 
 
 export const getStaticProps: GetStaticProps<Props, IParams> = async ({ params }) => {
+    const { project } = await getProjectByID(params?.id!)
 
-    const projectQuery = gql`
-            {
-             project(where: {slug: "${params!.id}"}) {
-                markdown
-                liveDemo
-                githubUrl
-                description
-                coverImage {
-                  url
-                }
-                slug
-                technologies
-                title
-                updatedAt
-                createdAt
-              }
-            }`;
-
-    const { project } = await graphcms.request(projectQuery);
     const renderedContent = await serialize(project.markdown);
     return {
         props: {
             project,
             renderedContent
-        }
+        },
+        revalidate: 84600,
     }
 }
 
 
 const Project: NextPageWithLayout<any> = ({ project , renderedContent }) => {
-    const updated = project.updatedAt.split("T")[0].split('-');
-    const updatedString = `${updated[1]}\\${updated[2]}\\${updated[0]}`
     const created = project.createdAt.split("T")[0].split('-');
     const createdString = `${created[1]}\\${created[2]}\\${created[0]}`
 

@@ -4,20 +4,31 @@ import Layout from "../components/Layout/Layout";
 import PageLayout from "../components/Layout/PageLayout";
 import {useState} from "react";
 import {ChangeEvent, FormEvent} from "react";
+import {links} from "../constants/links";
+
+export async function getStaticProps() {
+    const secret = process.env.FORM_ENDPOINT
+    return {
+        props: {
+            secret,
+        }
+    }
+
+}
 
 function Header(): JSX.Element {
     return (
         <>
             <div>
                 <p className="text-lg">
-                    <span>Feel free to reach out to me via my <a href="https://www.linkedin.com/in/jeremiah-lewis-082404186/" className="link">LinkedIn</a>, <a href="https://github.com/jeremiahlewis77" className="link">GitHub</a> or the form below.</span>
+                    <span>Feel free to reach out to me via my <a href={links.linkedin} className="link">LinkedIn</a> or the form below.</span>
                 </p>
             </div>
         </>
     )
 }
 
-const Contact: NextPageWithLayout<any> = () => {
+const Contact: NextPageWithLayout<any> = ({ secret }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -30,7 +41,7 @@ const Contact: NextPageWithLayout<any> = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const endpoint = "https://svyszyvs2a.execute-api.us-east-2.amazonaws.com/default/sendEmail";
+        const endpoint = secret;
         const body = JSON.stringify({
             name: formData.name,
             email: formData.email,
