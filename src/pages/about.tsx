@@ -4,37 +4,8 @@ import Layout from "../components/Layout/Layout";
 import PageLayout from "../components/Layout/PageLayout";
 import {Badge, BadgeGroup} from "../components/ui/Badges/Badges"
 import {TechCard, TechCardGroup} from "../components/ui/Technologies/TechCard";
+import {technologies, frameworks} from "../constants/technologies";
 import Link from "next/link"
-
-const technologies = [
-    {tech: "cplusplus", title: "C++", link: "https://cplusplus.com"},
-    {tech: "javascript", title: "JavaScript", link: "https://javascript.com"},
-    {tech: "typescript", title: "TypeScript", link: "https://typescriptlang.org"},
-    {tech: "python", title: "Python", link: "https://python.org"},
-    {tech: "git", title: "Git", link: "https://reactjs.org"},
-    {tech: "mysql", title: "MySQL", link: "https://www.mysql.com/"},
-    {tech: "postgresql", title: "PostgreSQL", link: "https://www.postgresql.org/"},
-    {tech: "docker", title: "Docker", link: "https://docker.com"},
-    {tech: "html5", title: "HTML", link: "https://en.wikipedia.org/wiki/HTML"},
-    {tech: "css3", title: "CSS", link: "https://en.wikipedia.org/wiki/CSS"},
-]
-
-const frameworks = [
-    {tech: "react", title: "React.js", link: "https://reactjs.org"},
-    {tech: "nextjs", title: "Next.js", link: "https://nextjs.org/"},
-    {tech: "django", title: "Django", link: "https://www.djangoproject.com/"},
-    {tech: "tailwindcss", title: "TailwindCSS", link: "https://tailwindcss.com/"},
-    {tech: "bootstrap", title: "Bootstrap", link: "https://getbootstrap.com/"},
-
-]
-
-function Header(): JSX.Element {
-    return (
-        <>
-        </>
-    );
-}
-
 
 const About: NextPageWithLayout<any> = () => {
     return (
@@ -42,7 +13,7 @@ const About: NextPageWithLayout<any> = () => {
             <div className="bg-white rounded-lg max-w-4xl mx-auto drop-shadow-lg flex sm:flex-row min-h-fit flex-col-reverse sm:p-0 p-8 justify-center">
                 <div id="left-header" className="sm:p-8 sm:basis-4/6 p-0">
                     <div>
-                        <h2 className="sm:text-4xl tracking-tight text-gunmetal mb-4 font-bold text-3xl">Hey there! 👋</h2>
+                        <h2 className="sm:text-4xl tracking-tight text-gunmetal mb-4 font-bold text-3xl">Hey there! 👋🏾</h2>
                         <p className="sm:text-xl text-lg text-gray-500 tracking-tight -mt-2">I&apos;m <strong>Jeremiah</strong>, a Software Engineer from Houston, Texas with a passion for developing technologies that create effective and efficient solutions. </p>
                     </div>
                     <div>
@@ -104,7 +75,7 @@ About.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
             <Layout title="About Me">
-                <PageLayout pageTitle="About Me" headerContent={Header()}  headerCSS="flex flex-col justify-center text-center" pageCSS="px-8 pb-8">
+                <PageLayout pageTitle="About Me" headerCSS="flex flex-col justify-center text-center" pageCSS="px-8 pb-8">
                     {page}
                 </PageLayout>
             </Layout>
