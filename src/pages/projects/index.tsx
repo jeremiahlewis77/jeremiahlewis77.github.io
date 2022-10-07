@@ -1,39 +1,26 @@
-import {NextPageWithLayout} from "./_app";
+import {NextPageWithLayout} from "../_app";
 import React, {ReactElement} from "react";
-import Layout from "../components/Layout/Layout";
-import PageLayout from "../components/Layout/PageLayout";
-import { GraphQLClient, gql } from "graphql-request"
-import Project from "../components/Project/Project";
+import Layout from "../../components/Layout/Layout";
+import PageLayout from "../../components/Layout/PageLayout";
+import Project from "../../components/Project/Project";
+import {getProjects} from "../../graphql/queries/getProjects";
 
-const graphcms = new GraphQLClient('https://api-us-east-1.hygraph.com/v2/cl4m60ewc7fun01z6437najgy/master');
-const projectQuery = gql`
-{
-  projects {
-    id
-    slug
-    title
-    githubUrl
-    liveDemo
-    coverImage {
-        url
+export async function getStaticProps () {
+    try {
+        const { projects } = await getProjects()
+        return {
+            props: {
+                projects
+            },
+            revalidate: 86400,
         }
-    description
-    technologies
-    markdown
-    }
-  }
-`;
-
-export async function getStaticProps() {
-    const { projects } = await graphcms.request(projectQuery)
-
-    return {
-        props: {
-            projects
+    } catch (error) {
+        return {
+            props: {},
+            revalidate: 3600,
         }
     }
 }
-
 
 function Header(): JSX.Element {
     return (
